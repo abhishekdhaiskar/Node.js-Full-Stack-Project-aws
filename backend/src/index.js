@@ -12,7 +12,7 @@ const pool = new Pool({
 });
 app.get('/api/hello', async (req, res) => {
   try {
-    const r = await pool.query('SELECT 'Hello from Postgres!' as msg');
+    const r = await pool.query("SELECT 'Hello from Postgres!' as msg");
     res.json({ message: r.rows[0].msg });
   } catch (e) {
     console.error(e);
