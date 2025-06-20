@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: your-docker-registry/frontend:latest
+        image: 888577051441.dkr.ecr.us-west-2.amazonaws.com/frontend  # replace your images 
         ports: [{ containerPort: 80 }]
 ---
 apiVersion: v1
