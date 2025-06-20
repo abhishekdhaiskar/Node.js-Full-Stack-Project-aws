@@ -1,3 +1,32 @@
+fullstack-project/
+│
+├── terraform/
+│   ├── main.tf
+│   ├── variables.tf
+│   └── outputs.tf
+│
+├── k8s-manifests/
+│   ├── frontend-deployment.yaml
+│   ├── backend-deployment.yaml
+│   ├── ingress.yaml
+│   ├── secrets.yaml
+│   └── configmap.yaml
+│
+├── frontend/
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── App.js
+│   │   └── index.js
+│   └── Dockerfile
+│
+└── backend/
+    ├── src/
+    │   └── index.js
+    ├── package.json
+    ├── .env.example
+    └── Dockerfile
+
 **Push Fullstack Project to GitHub**
 we can use also vscode for push
 cd fullstack-project/
