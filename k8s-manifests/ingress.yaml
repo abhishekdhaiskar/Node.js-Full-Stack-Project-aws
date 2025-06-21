@@ -1,26 +1,24 @@
+
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: fullstack-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
-    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: dhaiskar-abhi.shop   # Replace with your actual domain
+  - host: fullstack.example.com
     http:
       paths:
-      - path: ^/api(/|$)(.*)
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: backend-svc
-            port:
-              number: 3000
       - path: /
         pathType: Prefix
         backend:
           service:
             name: frontend-svc
-            port:
-              number: 80
+            port: { number: 80 }
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: backend-svc
+            port: { number: 80 }
