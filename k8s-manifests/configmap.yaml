@@ -1,6 +1,7 @@
+
 apiVersion: v1
 kind: ConfigMap
-metadata:
-  name: frontend-config
+metadata: { name: db-config }
 data:
-  REACT_APP_API_URL: http://backend-svc:3000
+  DB_PORT: "5432"
+  DB_NAME: "postgres"
