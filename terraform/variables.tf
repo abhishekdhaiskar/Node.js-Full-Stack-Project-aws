@@ -3,7 +3,7 @@ variable "aws_region" {
 }
 
 variable "db_master_username" {
-  default = "admin"
+  default = "dbmaster"  # avoid 'admin'
 }
 
 variable "db_master_password" {
