@@ -1,36 +1,21 @@
+
 apiVersion: apps/v1
 kind: Deployment
-metadata:
-  name: frontend
+metadata: { name: frontend }
 spec:
   replicas: 2
-  selector:
-    matchLabels:
-      app: frontend
+  selector: { matchLabels: { app: frontend } }
   template:
-    metadata:
-      labels:
-        app: frontend
+    metadata: { labels: { app: frontend } }
     spec:
       containers:
       - name: frontend
-        image: 888577051441.dkr.ecr.us-west-2.amazonaws.com/frontend
-        ports:
-          - containerPort: 80
-        env:
-          - name: REACT_APP_API_URL
-            valueFrom:
-              configMapKeyRef:
-                name: frontend-config
-                key: REACT_APP_API_URL
+        image: 888577051441.dkr.ecr.us-west-2.amazonaws.com/frontend  # replace your images 
+        ports: [{ containerPort: 80 }]
 ---
 apiVersion: v1
 kind: Service
-metadata:
-  name: frontend-svc
+metadata: { name: frontend-svc }
 spec:
-  selector:
-    app: frontend
-  ports:
-    - port: 80
-      targetPort: 80
+  selector: { app: frontend }
+  ports: [{ port: 80, targetPort: 80 }]
